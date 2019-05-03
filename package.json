@@ -1,7 +1,7 @@
 {
-  "name": "api-search-intention",
+  "name": "boilerplate-ts",
   "version": "1.0.0",
-  "description": "api-search-intention",
+  "description": "boilerplate-ts",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -17,11 +17,10 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/maxmilhas/api-search-intention.git"
   },
-  "author": "Jair Elton Batista de Souza",
+  "author": "Albo Vieira",
   "license": "SEE LICENSE IN license.md",
   "homepage": "https://bitbucket.org/maxmilhas/api-search-intention#readme",
   "dependencies": {
-    "@maxmilhas/logger": "^1.0.8",
     "body-parser": "^1.18.3",
     "compression": "^1.6.2",
     "dotenv": "^6.0.0",
