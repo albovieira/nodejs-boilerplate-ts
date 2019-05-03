@@ -10,12 +10,11 @@ import {
 import { inject } from 'inversify';
 import { Logger } from 'winston';
 
-@controller('/search-intention')
+@controller('/movies')
 export class TestController implements interfaces.Controller {
-  @httpGet('/')
-  async test() {
-    return {
-      working: true,
-    };
+  @httpGet('/upcoming')
+  async upcoming() {
+    
+    return {};
   }
 }
