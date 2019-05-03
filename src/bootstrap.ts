@@ -8,7 +8,6 @@ import { TYPES } from './util/ioc-types';
 import './controller/test-controller';
 import { DatabaseError } from './util/errors';
 import { ServiceConfig } from './model';
-import { LoggerFactory, ConfigProvider, LoggerTypes } from '@maxmilhas/logger';
 
 const DECIMAL_RADIX = 10;
 const MONGO_URL = process.env.MONGO_URL!;
