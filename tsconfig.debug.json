@@ -5,5 +5,5 @@
     "composite": true,
     "outDir": "./.ts-debug/lib"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/lib/**/*.ts"]
 }
