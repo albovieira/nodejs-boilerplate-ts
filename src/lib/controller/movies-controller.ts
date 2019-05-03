@@ -8,13 +8,17 @@ import {
   queryParam,
 } from 'inversify-express-utils';
 import { inject } from 'inversify';
-import { Logger } from 'winston';
+import { MovieDB } from '../service/moviedb';
 
 @controller('/movies')
-export class TestController implements interfaces.Controller {
+export class MoviesController implements interfaces.Controller {
+
+  constructor(
+    private movieDB: MovieDB,
+  ) {}
+
   @httpGet('/upcoming')
-  async upcoming() {
-    
+  async upcoming(@queryParam('language') language: string, @queryParam('page') page: string) {
     return {};
   }
 }
