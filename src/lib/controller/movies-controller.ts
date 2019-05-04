@@ -18,7 +18,7 @@ export class MoviesController implements interfaces.Controller {
   ) {}
 
   @httpGet('/upcoming')
-  async upcoming(@queryParam('language') language: string, @queryParam('page') page: string) {
-    return {};
+  async upcoming(@queryParam('language') language: string, @queryParam('page') page: number) {
+    return this.movieDB.getUpComing({ language, page });
   }
 }

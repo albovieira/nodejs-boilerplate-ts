@@ -1,6 +1,6 @@
 export const TYPES = {
   Logger: Symbol('Logger'),
-  RedisClient: Symbol('RedisClient'),
+  Cache: Symbol('Cache'),
   CacheTtl: Symbol('CacheTtl'),
   TheMovieDBConfig: Symbol('TheMovieDBConfig'),
 };

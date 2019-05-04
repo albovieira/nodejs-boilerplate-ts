@@ -15,7 +15,10 @@ export interface QueryRequest {
 
 export interface ResponseMoviesUpcoming{
   page: number | 1;
+  dates: Object;
   results: [Movie];
+  total_pages: number;
+  total_results:number;
 }
 
 export interface ResponseMovieDetails extends MovieDetails{}
