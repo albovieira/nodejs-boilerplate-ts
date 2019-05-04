@@ -30,7 +30,7 @@
       "label": "Clean debug TS",
       "identifier": "tsc:test:clean",
       "type": "shell",
-      "command": "rm -rf ${workspaceRoot}/.ts-test",
+      "command": "rm -rf ${workspaceRoot}/ts-test",
       "group": "build"
     }
   ]

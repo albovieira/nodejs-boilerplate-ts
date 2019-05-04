@@ -8,7 +8,7 @@
     "prestart": "npx tsc",
     "start": "node bin/index.js",
     "pretest": "npx tsc -b ./tsconfig.test.json",
-    "test": "cross-env NODE_ENV=test npx nyc --reporter html --check-coverage --lines 80 npx mocha --timeout 500 --exit --bail ./.ts-test/test/setup.spec.js \"./.ts-test/test/**/*.spec.js\"",
+    "test": "cross-env NODE_ENV=test npx nyc --reporter html --check-coverage --lines 80 npx mocha --timeout 5000 --exit --bail ./.ts-test/test/setup.spec.js \"./.ts-test/test/**/*.spec.js\"",
     "posttest": "npx del .ts-test",
     "prebuild": "npx del bin",
     "build": "npx tsc"

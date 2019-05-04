@@ -4,8 +4,9 @@ import * as expressWinston from 'express-winston';
 import { Container } from 'inversify';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { Logger } from 'winston';
-import { TYPES } from './util/ioc-types';
+import * as express from 'express';
 
+import { TYPES } from './util/ioc-types';
 import requestMetadata from './middleware/request-metadata';
 import correlationId from './middleware/correlation-id';
 import errorProcessor from './middleware/error-processor';
@@ -33,6 +34,9 @@ export default async function(container: Container) {
         dynamicMeta: req => ({ correlationId: req.correlationId }),
       }),
     );
+
+    app.use(express.static('public'));
+    app.use(express.static('webapp/dist'));
   });
 
   server.setErrorConfig((app) => {

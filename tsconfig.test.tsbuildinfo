@@ -590,8 +590,8 @@
         "signature": "03a3d587ec449ab56e4ce9018b0de606b996eef4f048e39e50d0b91c784a25ab"
       },
       "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/util/cache.ts": {
-        "version": "54af174da364379f0e9241f59031e468b60073c7cf1d4aef9d90a75610eb71d7",
-        "signature": "e7258ce21f88102b2ab65c653348b46dfbc587ca9480658e01806be7d764512a"
+        "version": "b12fa2d4cdfb2ed80193a428f603f6a78e70b7879824f5c218dcc41ed6740b3a",
+        "signature": "ff2dbc4897de98893120c937ecde0d46c599c8ca443fa6541b45b7c874dfad9e"
       },
       "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/service/moviedb.ts": {
         "version": "bae00420f1f8e5f5eba6bee0f0376c767fb7851c41d6b743ed0f920ea9957c63",
@@ -649,8 +649,12 @@
         "version": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7",
         "signature": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7"
       },
+      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/mocks/mock-responses.ts": {
+        "version": "deaff07e33534c390a5f264229c5f45ca14447d710e846680962087edef3a180",
+        "signature": "b08eb1bd0e0dfaf156b790f3ea8209c3466d4c1da3a53ff85ae63f3a4fbf7433"
+      },
       "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/moviedb.spec.ts": {
-        "version": "1ff78b1e3ded70569bbcafa0d9be8a69cc12745d6a243764e78c2598dc1aa4e6",
+        "version": "9463359e4d39dffb0e1e1cc30f543fb33d462146df757ae10786faa25737821c",
         "signature": "3f574026025aa0f7b7d36b693c690a56ec0cacd2b777a95046fee60436f5c762"
       },
       "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/dotenv/index.d.ts": {
@@ -1636,6 +1640,10 @@
         "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/node/util.d.ts",
         "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/mocks/mock-responses.ts": [
+        "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/node/util.d.ts",
+        "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/moviedb.spec.ts": [
         "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/mocha/index.d.ts",
         "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/inversify/dts/inversify.d.ts",
@@ -1649,6 +1657,9 @@
         "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/bootstrap.ts",
         "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/model.ts",
         "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/util/ioc-types.ts",
+        "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/util/http-status.ts",
+        "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/mocks/mock-responses.ts",
+        "/home/albo-vieira/Projects/arch-touch/api-mdb/src/lib/util/cache.ts",
         "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/node/util.d.ts",
         "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2727,9 +2738,10 @@
       "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/chai-http/types/index.d.ts",
       "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/chai-as-promised/index.d.ts",
       "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/moment/moment.d.ts",
-      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/moviedb.spec.ts",
+      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/mocks/mock-responses.ts",
       "/home/albo-vieira/Projects/arch-touch/api-mdb/node_modules/@types/dotenv/index.d.ts",
-      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/setup.spec.ts"
+      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/setup.spec.ts",
+      "/home/albo-vieira/Projects/arch-touch/api-mdb/src/test/moviedb.spec.ts"
     ]
   },
   "version": "3.4.5"

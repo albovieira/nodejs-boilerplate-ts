@@ -37,4 +37,7 @@ export default class Cache {
     );
   }
 
+  async clean() {
+    return this.redis.flushdb();
+  }
 }
