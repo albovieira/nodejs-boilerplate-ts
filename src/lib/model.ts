@@ -9,8 +9,9 @@ export interface ServiceConfig {
 }
 
 export interface QueryRequest {
-  page: number | 1;
+  page?: number;
   language: string | Languages.ENG_US;
+  query?: string;
 }
 
 export interface ResponseMoviesUpcoming{
@@ -84,4 +85,12 @@ export interface MovieDetails{
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+
+
+export interface HashParams {
+  language: string;
+  page?:number;
+  movieId?:string;
+  query?:string;
 }
