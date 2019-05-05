@@ -20,7 +20,7 @@
               {{movie.release_date}}
             </p>
           </b-card-text>
-          <b-button :href="`/movie/${movie.id}`" variant="primary">More Info</b-button>
+          <b-button :to="`/movie/${movie.id}`" variant="primary">More Info</b-button>
         </b-card>
       </b-col>
     </b-row>
