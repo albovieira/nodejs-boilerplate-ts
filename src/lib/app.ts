@@ -5,6 +5,7 @@ import { Container } from 'inversify';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { Logger } from 'winston';
 import * as express from 'express';
+import cors from 'cors';
 
 import { TYPES } from './util/ioc-types';
 import requestMetadata from './middleware/request-metadata';
@@ -20,6 +21,7 @@ export default async function(container: Container) {
     app.disable('x-powered-by');
     app.use(bodyParser.json());
     app.use(compression());
+    app.use(cors());
     app.use(correlationId());
     app.use(requestMetadata());
 

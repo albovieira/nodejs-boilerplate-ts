@@ -11,7 +11,7 @@ export default class Cache {
     const REDIS_PORT = Number.parseInt(process.env.REDIS_PORT!, DECIMAL_RADIX);
     const REDIS_DB = Number.parseInt(process.env.REDIS_DB! || '0', DECIMAL_RADIX);
 
-    this.redis = new Redis(REDIS_PORT , process.env.REDIS_HOST, {
+    this.redis = new Redis(REDIS_PORT || 6379 , process.env.REDIS_HOST, {
       db: REDIS_DB || 0,
       keyPrefix: 'mdb:',
       lazyConnect: true,
