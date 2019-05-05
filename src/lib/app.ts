@@ -5,7 +5,7 @@ import { Container } from 'inversify';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { Logger } from 'winston';
 import * as express from 'express';
-import cors from 'cors';
+import * as cors from 'cors';
 
 import { TYPES } from './util/ioc-types';
 import requestMetadata from './middleware/request-metadata';
