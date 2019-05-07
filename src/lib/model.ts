@@ -87,7 +87,6 @@ export interface MovieDetails{
   vote_count: number;
 }
 
-
 export interface HashParams {
   language: string;
   page?:number;
