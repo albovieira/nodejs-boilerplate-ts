@@ -1,6 +1,6 @@
-# open
+# archtouch
 
-> Acerteiro - Open
+> ArchTouch
 
 ## Build Setup
 
