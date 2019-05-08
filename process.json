@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "api-mdb",
-      "script": "./bin/index.js",
+      "script": "./index.js",
       "exec_mode": "cluster",
       "instances": 0
     }

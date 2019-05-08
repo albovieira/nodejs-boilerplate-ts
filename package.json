@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-ts",
+  "name": "mdb-wrapper",
   "version": "1.0.0",
-  "description": "boilerplate-ts",
+  "description": "mdb-wrapper",
   "private": true,
   "main": "index.js",
   "scripts": {
