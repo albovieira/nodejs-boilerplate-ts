@@ -10,7 +10,7 @@ import {
 import { inject } from 'inversify';
 import { Logger } from 'winston';
 
-@controller('/search-intention')
+@controller('/test')
 export class TestController implements interfaces.Controller {
   @httpGet('/')
   async test() {
