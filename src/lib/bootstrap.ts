@@ -2,12 +2,12 @@ import { Container } from 'inversify';
 import { MongoClient, Collection, Db } from 'mongodb';
 import * as Redis from 'ioredis';
 import * as winston from 'winston';
+import { ConfigProvider, LoggerFactory, LoggerTypes } from 'cache-layer';
 
 import { TYPES } from './util/ioc-types';
 
 import './controller/test-controller';
 import { DatabaseError } from './util/errors';
-import { ServiceConfig } from './model';
 
 const DECIMAL_RADIX = 10;
 const MONGO_URL = process.env.MONGO_URL!;
@@ -15,12 +15,6 @@ const MONGO_DATABASE = process.env.MONGO_DATABASE!;
 const REDIS_HOST = process.env.REDIS_HOST!;
 const REDIS_PORT = Number.parseInt(process.env.REDIS_PORT!, DECIMAL_RADIX);
 const REDIS_DB = Number.parseInt(process.env.REDIS_DB! || '0', DECIMAL_RADIX);
-
-const AIRPORTS_PROVIDER_BASE_URI = process.env.AIRPORTS_PROVIDER_BASE_URI!;
-const AIRPORTS_PROVIDER_TIMEOUT = Number.parseInt(
-  process.env.AIRPORTS_PROVIDER_TIMEOUT! || '60000',
-  DECIMAL_RADIX,
-);
 
 function createLogger(): winston.Logger {
   const {
@@ -54,8 +48,7 @@ function createLogger(): winston.Logger {
       level: REDIS_LOG_LEVEL,
     },
   };
-  const provider: ConfigProvider =
-    logProviders.find((p) => p.enabled) || consoleProvider;
+  const provider: ConfigProvider = logProviders.find(p => p.enabled) || consoleProvider;
 
   const logger = LoggerFactory.create(provider.name, provider.config || {});
   return logger;
@@ -81,13 +74,6 @@ async function getMongoCollection(collectionName: string): Promise<Collection> {
   }
 }
 
-function getAirportsProviderConfig(): ServiceConfig {
-  return {
-    url: AIRPORTS_PROVIDER_BASE_URI,
-    timeout: AIRPORTS_PROVIDER_TIMEOUT,
-  };
-}
-
 export default async function(): Promise<Container> {
   const logger = createLogger();
 
@@ -95,23 +81,16 @@ export default async function(): Promise<Container> {
 
   container.bind<winston.Logger>(TYPES.Logger).toConstantValue(logger);
 
-  const intentionCollection = await getMongoCollection('intentions');
-  const channelCollection = await getMongoCollection('sales_channels');
-  const messageCollection = await getMongoCollection('messages');
-  const providerCollection = await getMongoCollection('providers');
-  const configCollection = await getMongoCollection('config');
+  // const myCollection = await getMongoCollection('intentions');
 
-  container
-    .bind(TYPES.IntentionCollection)
-    .toConstantValue(intentionCollection);
-  container.bind(TYPES.ChannelCollection).toConstantValue(channelCollection);
-  container.bind(TYPES.MessageCollection).toConstantValue(messageCollection);
-  container.bind(TYPES.ProviderCollection).toConstantValue(providerCollection);
-  container.bind(TYPES.ConfigCollection).toConstantValue(configCollection);
+  // container
+  //   .bind(TYPES.IntentionCollection)
+  //   .toConstantValue(myCollection);
+  // container.bind(TYPES.ChannelCollection).toConstantValue(channelCollection);
 
   const redisClient = new Redis(REDIS_PORT, REDIS_HOST, {
     db: REDIS_DB || 0,
-    keyPrefix: 'search_intention:',
+    keyPrefix: 'key_index:',
     lazyConnect: true,
     maxRetriesPerRequest: 0,
   });
@@ -126,9 +105,9 @@ export default async function(): Promise<Container> {
       Number.parseInt(process.env.CACHE_TTL! || '60', DECIMAL_RADIX),
     );
 
-  container
-    .bind(TYPES.AirportsProviderConfig)
-    .toConstantValue(getAirportsProviderConfig());
+  // container
+  //   .bind(TYPES.AirportsProviderConfig)
+  //   .toConstantValue(getAirportsProviderConfig());
 
   return container;
 }
