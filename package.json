@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/maxmilhas/api-search-intention.git"
+    "url": "https://github.com/albovieira/nodejs-boilerplate-ts"
   },
   "author": "Albo Vieira",
   "license": "SEE LICENSE IN license.md",
-  "homepage": "https://bitbucket.org/maxmilhas/api-search-intention#readme",
+  "homepage": "https://github.com/albovieira/nodejs-boilerplate-ts#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cache-layer": "^1.0.2",
