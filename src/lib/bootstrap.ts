@@ -2,7 +2,7 @@ import { Container } from 'inversify';
 import { MongoClient, Collection, Db } from 'mongodb';
 import * as Redis from 'ioredis';
 import * as winston from 'winston';
-import { ConfigProvider, LoggerFactory, LoggerTypes } from 'cache-layer';
+import { ConfigProvider, LoggerFactory, LoggerTypes } from 'logger-dispatcher';
 
 import { TYPES } from './util/ioc-types';
 
