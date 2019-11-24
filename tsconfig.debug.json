@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "rootDir": ".",
-    "composite": true,
-    "outDir": "./.ts-debug/lib"
-  },
-  "include": ["src/lib/**/*.ts"]
-}
