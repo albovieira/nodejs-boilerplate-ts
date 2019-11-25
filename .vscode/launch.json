@@ -10,23 +10,29 @@
       "name": "Launch Program",
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
-      "program": "${workspaceRoot}/src/lib/index.ts",
-      "outFiles": ["${workspaceRoot}/.ts-debug/**"],
+      "program": "${workspaceRoot}/src/index.ts",
+      "outFiles": ["${workspaceRoot}/bin/**"],
       "envFile": "${workspaceFolder}/.env",
       "preLaunchTask": "tsc:debug:build",
       "postDebugTask": "tsc:debug:clean",
       "console": "integratedTerminal"
     },
     {
-      "name": "Run mocha",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/mocha",
-      "stopOnEntry": false,
-      "args": ["${workspaceRoot}/.ts-test/test/setup.spec.js", "${workspaceRoot}/.ts-test/test/**/*.spec.js"],
-      "cwd": "${workspaceRoot}",
-      "preLaunchTask": "tsc:test:build",
-      "postDebugTask": "tsc:test:clean"
+      "name": "Run Mocha",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+          "-r",
+          "ts-node/register",
+          "--timeout",
+          "999999",
+          "--colors",
+          "${workspaceFolder}/test/**/*.spec.ts",
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "protocol": "inspector"
     }
   ]
 }

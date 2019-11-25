@@ -15,7 +15,7 @@
       "label": "Clean debug TS",
       "identifier": "tsc:debug:clean",
       "type": "shell",
-      "command": "rm -rf ${workspaceRoot}/.bin",
+      "command": "rm -rf ${workspaceRoot}/bin",
       "group": "build"
     },
   ]
